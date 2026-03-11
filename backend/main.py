@@ -3,6 +3,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from pathlib import Path
 from backend.agent import run_agent, start_practice
 
 app = FastAPI()
@@ -14,14 +15,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.mount("/static", StaticFiles(directory="frontend"), name="static")
+ROOT_DIR = Path(__file__).resolve().parent.parent
+FRONTEND_DIR = ROOT_DIR / "frontend"
+if not FRONTEND_DIR.exists():
+    FRONTEND_DIR = ROOT_DIR
+
+app.mount("/static", StaticFiles(directory=str(FRONTEND_DIR)), name="static")
 
 class ChatRequest(BaseModel):
     message: str
 
 @app.get("/")
 def index():
-    return FileResponse("frontend/index.html")
+    return FileResponse(str(FRONTEND_DIR / "index.html"))
 
 @app.post("/chat")
 def chat(request: ChatRequest):

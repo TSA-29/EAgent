@@ -3,4 +3,4 @@ import os
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
-from main import app
+from backend.main import app
