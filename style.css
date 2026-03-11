@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #FFF6F8;
+    color: #374151;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px 100px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 34px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #6B7280;
+}
+
+#chat {
+    min-height: 400px;
+    margin-bottom: 20px;
+}
+
+.message {
+    margin: 20px 0;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.user {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user-bubble {
+    background: #F9A8B8;
+    color: white;
+    padding: 14px 18px;
+    border-radius: 18px;
+    max-width: 75%;
+    font-size: 15px;
+}
+
+.agent {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.agent-bubble {
+    background: #FCE7F3;
+    padding: 14px 18px;
+    border-radius: 18px;
+    max-width: 75%;
+    font-size: 15px;
+}
+
+.tool-block {
+    background: #FFFFFF;
+    border: 1px solid #F3D3DB;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px 0;
+}
+
+.tool-label {
+    font-size: 12px;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.tool-name {
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+.tool-output {
+    font-size: 14px;
+    color: #6B7280;
+}
+
+.question-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.question-title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #374151;
+}
+
+.option {
+    padding: 8px 0;
+    font-size: 15px;
+    color: #4B5563;
+}
+
+.practice-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #F9A8B8, #FBCFE8);
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.practice-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(249, 168, 184, 0.3);
+}
+
+.input-area {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    border-top: 1px solid #F3D3DB;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.input-area > div {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    gap: 12px;
+}
+
+#input {
+    flex: 1;
+    padding: 12px 18px;
+    border: 1px solid #F3D3DB;
+    border-radius: 24px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+}
+
+#input:focus {
+    border-color: #F9A8B8;
+}
+
+.input-area button {
+    padding: 12px 24px;
+    background: #F9A8B8;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.input-area button:hover {
+    background: #F78BA0;
+}
+
+.exam-container {
+    margin: 20px 0;
+}
+
+.exam-title {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #374151;
+}
+
+.question-text {
+    font-size: 16px;
+    margin: 12px 0;
+    color: #374151;
+    line-height: 1.6;
+}
+
+.options {
+    margin: 16px 0;
+}
+
+.option {
+    padding: 12px;
+    margin: 8px 0;
+    border: 2px solid #F3D3DB;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.option:hover {
+    background: #FFF6F8;
+    border-color: #F9A8B8;
+}
+
+.option input[type="radio"] {
+    cursor: pointer;
+}
+
+.option label {
+    cursor: pointer;
+    flex: 1;
+    font-size: 15px;
+}
+
+.submit-btn {
+    display: block;
+    margin: 30px auto;
+    padding: 14px 40px;
+    background: linear-gradient(135deg, #F9A8B8, #FBCFE8);
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(249, 168, 184, 0.4);
+}
+
+.results-container {
+    margin: 30px 0;
+}
+
+.score {
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #F9A8B8;
+}
+
+.result-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 16px 0;
+    border-left: 4px solid #F3D3DB;
+}
+
+.result-card.correct {
+    border-left-color: #10B981;
+    background: #F0FDF4;
+}
+
+.result-card.incorrect {
+    border-left-color: #EF4444;
+    background: #FEF2F2;
+}
+
+.answer-info {
+    margin-top: 12px;
+    font-size: 15px;
+}
+
+.correct-answer {
+    color: #10B981;
+    font-weight: 500;
+    margin-top: 6px;
+}
