@@ -1,6 +1,4 @@
 {
-  "buildCommand": null,
-  "framework": null,
   "builds": [
     {
       "src": "api/index.py",
@@ -9,12 +7,12 @@
   ],
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "/frontend/$1"
+      "src": "/api/(.*)",
+      "dest": "api/index.py"
     },
     {
       "src": "/(.*)",
-      "dest": "/api/index.py"
+      "dest": "/$1"
     }
   ]
 }
