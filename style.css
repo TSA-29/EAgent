@@ -231,6 +231,11 @@ h1 {
     border-color: #F9A8B8;
 }
 
+.option.selected {
+    background: #FFEAF0;
+    border-color: #F78BA0;
+}
+
 .option input[type="radio"] {
     cursor: pointer;
 }
